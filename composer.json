@@ -1,0 +1,24 @@
+{
+    "name": "barrel/barrel",
+    "type": "library",
+    "description": "Barrel-db Client for PHP",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Tah Teche",
+            "email": "tahteche@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Barrel\\": "src/"
+        }
+    }
+}
