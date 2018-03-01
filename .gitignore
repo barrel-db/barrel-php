@@ -1,10 +1,6 @@
-.eunit
-deps
-*.o
-*.beam
-*.plt
-erl_crash.dump
-ebin/*.beam
-rel/example_project
-.concrete/DEV_MODE
-.rebar
+.DS_Store
+build/
+cache/
+composer.phar
+composer.lock
+vendor/
