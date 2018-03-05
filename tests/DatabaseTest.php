@@ -5,29 +5,32 @@ use Barrel\Database;
 
 final class DatabaseTest extends TestCase
 {
+	private $db;
+
+	protected function setUp()
+	{
+		$this->db = new Database('http://localhost:7080/dbs', 'test123456');
+	}
+
 	public function testPostDatabase()
 	{
-		$db = new Database('http://localhost:7080/dbs', 'mydbTest');
-		$this->assertInstanceOf(Database::class, $db);
-		
+		$res = $this->db->post();		
+		$this->assertEquals(201, $res->getStatusCode());
 	}
 
 	public function testGetDatabase()
 	{
-		$db = Database::get('http://localhost:7080/dbs', 'mydbTest');
 		$this->assertInstanceOf(Database::class, $db);
 		
 	}
 
 	public function testGetListOfDatabases()
 	{
-		$db = Database::all('http://localhost:7080/dbs', 'mydbTest');
 		$this->assertInstanceOf(Database::class, $db);
 	}
 
 	public function testDeleteDatabase()
 	{
-		$db = Database::delete('http://localhost:7080/dbs', 'mydbTest');
 		$this->assertInstanceOf(Database::class, $db);
 	}
 }
