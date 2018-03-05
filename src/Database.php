@@ -28,5 +28,7 @@ class Database
 
 		$client = new Client();
 		$res = $client->post($this->uri, ['headers' => $headers,'body' => $body]);
+
+		return $res;
 	}
 }
