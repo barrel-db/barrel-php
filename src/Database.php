@@ -6,13 +6,13 @@ use GuzzleHttp\Client;
 
 class Database
 {
-	private $uri;
+	private $url;
 
 	private $db;
 
-	public function __construct($server_uri, $db_name) 
+	public function __construct($server_url, $db_name) 
 	{
-		$this->uri = $server_uri;
+		$this->url = $server_url;
 		$this->db = $db_name;
 	}
 
@@ -27,8 +27,16 @@ class Database
 					];
 
 		$client = new Client();
-		$res = $client->post($this->uri, ['headers' => $headers,'body' => $body]);
+		$res = $client->post($this->url, ['headers' => $headers,'body' => $body]);
 
-		return $res;
+		return json_decode((string) $res->getBody(), true);
+	}
+
+	public function delete()
+	{
+		$request_url = $this->url . '/' . $this->db;
+		$client = new Client();
+		$res = $client->delete($request_url);
+		return json_decode((string) $res->getBody(), true);
 	}
 }

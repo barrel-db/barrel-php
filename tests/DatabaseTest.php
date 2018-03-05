@@ -14,8 +14,9 @@ final class DatabaseTest extends TestCase
 
 	public function testPostDatabase()
 	{
-		$res = $this->db->post();		
-		$this->assertEquals(201, $res->getStatusCode());
+		$res = $this->db->post();
+
+		$this->assertEquals('test123456', $res['database_id']);
 	}
 
 	public function testGetDatabase()
@@ -31,6 +32,7 @@ final class DatabaseTest extends TestCase
 
 	public function testDeleteDatabase()
 	{
-		$this->assertInstanceOf(Database::class, $db);
+		$res = $this->db->delete();		
+		$this->assertTrue($res['ok']);
 	}
 }
