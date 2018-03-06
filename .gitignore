@@ -4,3 +4,4 @@ cache/
 composer.phar
 composer.lock
 vendor/
+phpunit.xml
