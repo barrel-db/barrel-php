@@ -43,7 +43,10 @@ class Database
 
 	public function getAll()
 	{
+		$client = new Client();
+		$res = $client->get($this->server_url);
 
+		return json_decode((string) $res->getBody(), true);
 	}
 
 	public function delete()
