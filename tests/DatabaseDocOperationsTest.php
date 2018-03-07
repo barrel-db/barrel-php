@@ -50,6 +50,13 @@ final class DatabaseDocOperationsTest extends TestCase
 		$this->assertArrayHasKey('id', $res1);
 		$this->assertEquals($this->doc2['id'], $res2['id']);
 
-		$doc1['id'] = $res1['id'];
+		$this->doc1['id'] = $res1['id'];
+	}
+
+	public function testGetDoc()
+	{
+		$res2 = $this->db->getDoc($this->doc2['id']);
+
+		$this->assertEquals($this->doc2['name'], $res2['name']);
 	}
 }
