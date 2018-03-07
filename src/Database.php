@@ -88,4 +88,12 @@ class Database
 
 		return json_decode((string) $res->getBody(), true);
 	}
+
+	public function getAllDocs()
+	{
+		$client = new Client();
+		$res = $client->get($this->docs_url);
+
+		return json_decode((string) $res->getBody(), true);
+	}
 }
