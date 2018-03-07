@@ -59,4 +59,11 @@ final class DatabaseDocOperationsTest extends TestCase
 
 		$this->assertEquals($this->doc2['name'], $res2['name']);
 	}
+
+	public function testGetAllDocs()
+	{
+		$res2 = $this->db->getAllDocs();
+
+		$this->assertEquals(2, $res2['count']);
+	}
 }
