@@ -77,4 +77,12 @@ final class DatabaseDocOperationsTest extends TestCase
 		$res2 = $this->db->getDoc($this->doc2['id']);
 		$this->assertFalse($res2['human']);
 	}
+
+	public function testDeleteDoc()
+	{
+		$res = $this->db->deleteDoc($this->doc2['id']);
+
+		$this->assertTrue($res['ok']);
+		$this->assertEquals($this->doc2['id'], $res['id']);
+	}
 }
