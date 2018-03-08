@@ -109,4 +109,14 @@ class Database
 				]);
 
 	}
+
+	public function deleteDoc($doc_id)
+	{
+		$delete_doc_url = $this->docs_url . '/' . $doc_id;
+
+		$client = new Client();
+		$res = $client->delete($delete_doc_url);
+
+		return json_decode((string) $res->getBody(), true);
+	}
 }
