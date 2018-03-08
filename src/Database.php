@@ -96,4 +96,17 @@ class Database
 
 		return json_decode((string) $res->getBody(), true);
 	}
+
+	public function putDoc($doc)
+	{
+		$put_doc_url = $this->docs_url . '/' . $doc['id'];
+		$body = json_encode($doc);
+
+		$client = new Client();
+		$res = $client->put($put_doc_url, [
+					'headers' => $this->post_headers,
+					'body' => $body
+				]);
+
+	}
 }
