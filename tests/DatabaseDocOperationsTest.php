@@ -66,4 +66,15 @@ final class DatabaseDocOperationsTest extends TestCase
 
 		$this->assertEquals(2, $res2['count']);
 	}
+
+	public function testPutDoc()
+	{
+		$res = $this->db->getDoc($this->doc2['id']);
+		$this->assertTrue($res['human']);
+		$res['human'] = false;
+		$res = $this->db->putDoc($res);
+
+		$res2 = $this->db->getDoc($this->doc2['id']);
+		$this->assertFalse($res2['human']);
+	}
 }
