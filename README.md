@@ -15,7 +15,7 @@ $ composer require barrel/barrel-php
 Barrel-DB uses the JSON format but using this library spares you from converting your data to JSON by using associative arrays which are native to PHP. For example:
 
 The following doc:
-```
+```json
 {
   "id" : "tahteche",
   "name" : "Teche Tah",
@@ -23,7 +23,7 @@ The following doc:
 }
 ```
 Will be:
-```
+```php
 [
   "id" => "tahteche",
   "name" => "Teche Tah",
@@ -32,7 +32,7 @@ Will be:
 ```
 
 The example below assumes your Barrel-DB server is serving request at, http://localhost:7080/dbs/ and the database you are perfoming operations on is `testdb`. All the functions below operate on an instance of the `Database` class which has been instantiated with the server link and database name.
-```
+```php
 <?php
 
 use Barrel\Database;
