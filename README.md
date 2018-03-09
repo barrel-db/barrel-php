@@ -8,7 +8,7 @@ Visit https://barrel-db.org/ for installation intructions for Barrel-DB and to l
 Install via composer:
 
 ```
-$ composer require barrel/barrel-php
+$ composer require barrel-db/barrel-php
 ```
 ## Usage
 
