@@ -1,5 +1,5 @@
 {
-    "name": "barrel/barrel-php",
+    "name": "barrel-db/barrel-php",
     "type": "library",
     "description": "PHP client library for Barrel-DB, a document-oriented database.",
     "license": "Apache-2.0",
