@@ -1,0 +1,15 @@
+sudo: required
+
+language: php
+
+php:
+  - '5.6'
+  - '7.1'
+
+services: docker
+
+before_install:
+  - docker run --detach --name=test-barrel -p 7080:7080 barrel/barrel
+
+install: 
+  - composer install
